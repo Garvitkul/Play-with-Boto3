@@ -33,9 +33,9 @@ def create_session(accountNo):
     # Return the session
     return session
 
-def getAccounts(MasterAccount):
+def getAccounts(accountNo):
     accounts = []
-    session = create_session(MasterAccount)
+    session = create_session(accountNo)
     client = session.client('organizations')
     paginator = client.get_paginator('list_accounts')
     page_iterator = paginator.paginate()
